@@ -1,13 +1,14 @@
 import 'react-native-gesture-handler';
-import { NavigationContainer } from "@react-navigation/native";
 import { Navigator } from './presentation/navigator/Navigator';
+import { ThemeProvider } from './presentation/context/ThemeContext';
+
+
 
 
 export const ComponentsApp = () => {
   return (
-    <NavigationContainer>
-    <Navigator/>
-    </NavigationContainer>
-
+    <ThemeProvider>
+      <Navigator/>
+    </ThemeProvider>
   )
 }

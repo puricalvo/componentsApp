@@ -4,10 +4,14 @@ import { Title } from "../../components/ui/Title";
 import { globalStyles } from "../../../config/theme/theme";
 import { Button } from "../../components/ui/Button";
 import { showPrompt } from "../../../config/adapters/prompt.adapter";
+import { useContext } from "react";
+import { ThemeContext } from "../../context/ThemeContext";
 
 
 
 export const AlertScreen = () => {
+
+  const { isDark } = useContext( ThemeContext );
 
     const createTwoButtonAlert = () => {
 
@@ -18,7 +22,11 @@ export const AlertScreen = () => {
             style: 'cancel',
           },
           {text: 'OK', onPress: () => console.log('OK Pressed')},
-        ]);
+        ],
+        {
+          userInterfaceStyle: isDark ? 'dark' : 'light'
+        },
+      );
     };
 
     
@@ -39,7 +47,9 @@ export const AlertScreen = () => {
             onDismiss() {
                 console.log('onDismiss');
             },
-        });
+            userInterfaceStyle: isDark ? 'dark' : 'light'
+        },
+      );
     
         const onShowPromt = () => {
 
@@ -51,7 +61,7 @@ export const AlertScreen = () => {
             {text: 'Cancelar', onPress: () => console.log('cancelar')}
           ],
           placeholder: 'Placeholder',
-         })
+         });
           
 
           //! Este es el codigo nativo que en Android no funciona
