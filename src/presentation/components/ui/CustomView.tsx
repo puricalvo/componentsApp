@@ -24,5 +24,5 @@ export const CustomView = ({ style, children, margin = false }: Props) => {
       ]}>
         { children }
     </View>
-  )
-}
+  );
+};

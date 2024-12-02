@@ -1,9 +1,10 @@
 import { KeyboardAvoidingView, Platform, ScrollView, Text, TextInput, View } from "react-native";
-import { globalStyles } from "../../../config/theme/theme";
-import { Card } from "../../components/ui/Card";
+import { globalStyles } from '../../../config/theme/theme';
+import { Card } from '../../components/ui/Card';
 import { CustomView } from "../../components/ui/CustomView";
 import { Title } from "../../components/ui/Title";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { ThemeContext } from "../../context/ThemeContext";
 
 
 
@@ -12,6 +13,7 @@ import { useState } from "react";
 
 export const TextInputScreen = () => {
 
+    const { colors } = useContext( ThemeContext );
     const [form, setForm] = useState({
         name: '',
         email: '',
@@ -44,7 +46,7 @@ export const TextInputScreen = () => {
                 />
 
                 <TextInput 
-                    style={ globalStyles.input }
+                    style={ globalStyles.input}
                     placeholder="Teléfono"
                     autoCorrect={ false }
                     keyboardType="phone-pad"

@@ -39,9 +39,7 @@ export const MenuItem = ({ name, icon, component, isFirst = false, isLast = fals
 
     </Pressable>
 
-        { !isLast && (
-          <Separator />
-        )}
+        { !isLast && <Separator /> }
     </>
   )
 }

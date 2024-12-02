@@ -106,7 +106,7 @@ export const CustomSectionListScreen = () => {
             <SectionList 
                 sections={ houses }
                 keyExtractor={( item ) => item }
-                renderItem={ ({ item }) => <Text style={{ marginVertical: 2 }}>{ item }</Text>}
+                renderItem={ ({ item }) => <Text style={{ color: colors.text, marginVertical: 2 }}>{ item }</Text>}
                 
                 renderSectionHeader={ ({ section }) => <SubTitle text={ section.title } backgroundColor={ colors.cardBackground }/>}
                 stickySectionHeadersEnabled
