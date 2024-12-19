@@ -1,4 +1,4 @@
-package com.componentsapp
+package com.puriclavo.rncomponentsapp
 
 import android.os.Bundle;
 
